@@ -1,0 +1,3 @@
+ver cometarios desde bombero movil y central
+comentarios en reportes
+correo login web
