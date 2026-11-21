@@ -122,16 +122,14 @@ export function getAlerta(id) {
 }
 
 // Adaptado para enviar la estructura que maneja el backend unificado de Radar132
+// En src/api.js — reemplaza crearAlerta por esta versión
 export function crearAlerta({ lat, lng, comentario, direccion, fotos }) {
   return call('crear_alerta.php', {
     method: 'POST',
     body: {
-      accion: 'crear',
-      tipo: 'incendio', // O el tipo predeterminado que gestione la app móvil
-      nivel: 'medio',    // Nivel por defecto desde civiles
       lat,
       lng,
-      descripcion: comentario || '',
+      comentario: comentario || '',
       direccion: direccion || '',
       fotos_b64: (fotos || []).map((f) => f.base64).filter(Boolean),
     },
